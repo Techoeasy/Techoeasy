@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechoEasy - AI-Powered Learning Management System</title>
+
+    <!-- Meta Details -->
+    <meta name="description" content="TechoEasy.com is an AI-driven, self-hosted LMS designed for educators and institutions. Deliver personalized learning, real-time analytics, intelligent assessments, and full autonomy in course management." />
+    <meta name="keywords" content="AI LMS, Self-Hosted LMS, AI Education Platform, Personalized Learning, LMS for Institutions, AI Tutor, Intelligent Assessments, Course Analytics, EdTech, TechoEasy" />
+    <meta name="author" content="TechoEasy" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="TechoEasy – AI-Powered Self-Hosted LMS" />
+    <meta property="og:description" content="Empower digital learning with TechoEasy – an advanced LMS platform featuring AI tutors, smart analytics, and personalized learning paths." />
+    <meta property="og:image" content="/og-image.jpg" />
+    <meta property="og:url" content="https://TechoEasy.com" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="TechoEasy – AI-Powered Self-Hosted LMS" />
+    <meta name="twitter:description" content="Experience smart, autonomous learning with AI-driven tools and real-time insights from TechoEasy." />
+    <meta name="twitter:image" content="/og-image.jpg" />
+
+    <!-- Fonts and Favicon -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+
+    <!-- GDPR Banner -->
+    <div
+      id="gdpr-banner"
+      style="
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 480px;
+        background: #5A85F7;
+        color: white;
+        padding: 12px 24px;
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+        z-index: 9999;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: nowrap;
+      "
+    >
+      <span style="flex: 1; min-width: 0; margin-right: 12px; font-size: 14px;">
+        We use cookies to improve your experience.
+      </span>
+      <button
+        id="gdpr-accept"
+        style="
+          background-color: #2262EE;
+          border: none;
+          color: white;
+          padding: 8px 16px;
+          border-radius: 6px;
+          cursor: pointer;
+          font-weight: 600;
+          font-family: 'Poppins', sans-serif;
+          min-width: 80px;
+          font-size: 14px;
+          white-space: nowrap;
+        "
+      >
+        Accept
+      </button>
+      <button
+        id="gdpr-decline"
+        style="
+          background-color: #159FA1;
+          border: none;
+          color: white;
+          padding: 8px 16px;
+          border-radius: 6px;
+          cursor: pointer;
+          font-weight: 600;
+          font-family: 'Poppins', sans-serif;
+          min-width: 80px;
+          font-size: 14px;
+          white-space: nowrap;
+        "
+      >
+        Decline
+      </button>
+    </div>
+
+    <script>
+      const banner = document.getElementById("gdpr-banner");
+      const acceptBtn = document.getElementById("gdpr-accept");
+      const declineBtn = document.getElementById("gdpr-decline");
+
+      if (!localStorage.getItem("gdprChoice")) {
+        banner.style.display = "flex";
+      }
+
+      acceptBtn.addEventListener("click", () => {
+        localStorage.setItem("gdprChoice", "accepted");
+        banner.style.display = "none";
+        // Optional: add your cookie acceptance logic here
+      });
+
+      declineBtn.addEventListener("click", () => {
+        localStorage.setItem("gdprChoice", "declined");
+        banner.style.display = "none";
+        // Optional: add your cookie decline logic here
+      });
+    </script>
+  </body>
+</html>
